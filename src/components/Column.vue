@@ -3,7 +3,7 @@ import { Step } from '@/models/step'
 
 defineProps<{
   step: Step
-  styled: boolean
+  styled?: boolean
 }>()
 </script>
 
@@ -51,11 +51,12 @@ defineProps<{
     flex-direction: column;
     justify-content: center;
     flex: 1;
+    border-top: 2px solid #d7cece;
 
     &.red-bin {
       color: #b33939;
       span.red-bin {
-        background-color: rgb(248, 194, 194);
+        background-color: rgb(248, 216, 216);
         padding: 0 10px;
       }
     }

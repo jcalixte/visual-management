@@ -3,15 +3,26 @@ import { manuSteps } from './data/steps'
 import { Step } from '@/models/step'
 import { ref } from '@vue/reactivity'
 import Column from './components/Column.vue'
+import { computed } from 'vue'
 
-const manu = manuSteps.reverse()
-const steps = ref<Step[]>(manu)
+const manu = computed(() => [...manuSteps].reverse())
+const steps = ref<Step[]>(manu.value)
+
+const stepLabel: Step = {
+  name: 'Step',
+  prerequisites: ['prerequisites'],
+  outputs: ['outputs'],
+  people: ['people'],
+  redBins: ['red bins']
+}
 </script>
 
 <template>
   <main>
+    <Column :step="stepLabel" styled />
+
     <template v-for="(step, index) in steps" :key="step.name">
-      <Column :step="step" :styled="index === 0" />
+      <Column class="column" :step="step" />
       <div class="separator" v-if="index !== steps.length - 1"></div>
     </template>
   </main>
@@ -34,6 +45,14 @@ main {
   justify-content: space-around;
   flex: 1;
   height: 80vh;
+}
+
+.column {
+  flex: 1;
+}
+
+h2 {
+  font-size: 1.8rem;
 }
 
 .separator {
