@@ -12,7 +12,7 @@ defineProps<{
     <h2>
       {{ step.name }}
     </h2>
-    <section>
+    <section class="prerequisite">
       <div v-for="prerequisite in step.prerequisites" :key="prerequisite">
         <span v-if="!styled">-</span> {{ prerequisite }}
       </div>
@@ -42,6 +42,10 @@ defineProps<{
   flex-direction: column;
   justify-content: space-between;
 
+  h2 {
+    color: #3a44d4;
+  }
+
   &.title {
     font-style: italic;
   }
@@ -52,6 +56,10 @@ defineProps<{
     justify-content: center;
     flex: 1;
     border-top: 2px solid #d7cece;
+
+    &.prerequisite {
+      border-top: 2px solid #3a44d4;
+    }
 
     &.red-bin {
       color: #b33939;

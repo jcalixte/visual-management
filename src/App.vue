@@ -36,7 +36,7 @@ const stepLabel: Step = {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #11151a;
   font-size: 1.5rem;
 }
 
@@ -57,6 +57,6 @@ h2 {
 
 .separator {
   width: 2px;
-  background-color: #d7cece;
+  background-color: #3a44d48e;
 }
 </style>

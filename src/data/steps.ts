@@ -5,14 +5,14 @@ export const manuSteps: Step[] = [
     name: 'Production',
     prerequisites: ['validated tests', 'up to date documentations'],
     outputs: ['feature available for users'],
-    people: ['devops team']
+    people: ['deployment team']
   },
   {
     name: 'Acceptation testing',
     prerequisites: ['deployed services in acceptation testing environment'],
     outputs: ['validated tests', 'up to date documentation'],
-    people: ['devops team', 'QA team', 'dev team'],
-    redBins: ['missing test on Safari browser']
+    people: ['deployment team', 'QA team'],
+    redBins: ['missing test on Firefox browser']
   },
   // {
   //   name: 'Dev testing',
@@ -29,17 +29,14 @@ export const manuSteps: Step[] = [
   // },
   {
     name: 'Code review',
-    prerequisites: [
-      'Pull Request ready to be code reviewed',
-      'unit tests up to date and running'
-    ],
-    outputs: ['merge on main branch'],
+    prerequisites: ['Code ready to be reviewed', 'technical tests up to date'],
+    outputs: ['code validated'],
     people: ['tech lead team']
   },
   {
     name: 'Development',
     prerequisites: ['technical ticket'],
-    outputs: ['branch ready to be code reviewed'],
+    outputs: ['code ready to be reviewed'],
     people: ['dev team'],
     redBins: [
       'missing tests',
